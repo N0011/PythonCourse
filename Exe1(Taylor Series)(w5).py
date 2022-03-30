@@ -1,19 +1,13 @@
-while True:
-    num1 = int(input('num1 = '))
-    num2 = int(input('num2 = '))
+import math 
+def sin(x,n):
+    sine=0
+    for i in range(n):
+        sign=math.pow(-1,i)
+        pi = math.pi
+        a=x*(pi/180)
+        sine=sine+(sign*(a**(2.0*i+1))/math.factorial(2*i+1))
+    return sine
 
-    if (num1 < 1 or num2 < 1):
-        print('The program is terminated.')
-        break
-
-    if (num1 < num2):
-        temp = num1
-        num1 = num2
-        num2 = temp
-
-    while (num2 != 0):
-        r = num1 % num2
-        num1 = num2
-        num2 = r
-
-    print('gcd(num1,num2) = ', num1,)
+x=float(input("Please enter the value of degrees: " ))
+n=int(input("Please enter the number of tems: "))
+print(sin(x,n))
