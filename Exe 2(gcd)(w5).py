@@ -1,19 +1,19 @@
-lower = 1
-upper = 10000
+while True:
+    num1 = int(input('num1 = '))
+    num2 = int(input('num2 = '))
 
-for num in range(lower, upper + 1):
+    if (num1 < 1 or num2 < 1):
+        print('The program is terminated.')
+        break
 
-  
-   order = len(str(num))
-    
-   
-   sum = 0
+    if (num1 < num2):
+        temp = num1
+        num1 = num2
+        num2 = temp
 
-   temp = num
-   while temp > 0:
-       digit = temp % 10
-       sum += digit ** order
-       temp //= 10
+    while (num2 != 0):
+        r = num1 % num2
+        num1 = num2
+        num2 = r
 
-   if num == sum:
-       print(num)
+    print('gcd(num1,num2) = ', num1,)
