@@ -1,17 +1,20 @@
-def caesar_encryption(plaintext,key):
-  encryption_str = ''
-  for i in plaintext:
-    if i.isupper():
-      temp = 65 + ((ord(i) - 65 + key) % 26) 
-      encryption_str = encryption_str + chr(temp)                              
-    elif i.islower():
-      temp = 97 + ((ord(i) - 97 + key) % 26)
-      encryption_str = encryption_str + chr(temp)
-    else:
-      encryption_str = encryption_str + i  
+def func( x ):
+    return x * x * x - x * x + 2
  
-  print("The ciphertext is:",encryption_str)
+def derivFunc( x ):
+    return 3 * x * x - 2 * x
  
-plaintext = input("Enter the plaintext:")
-key = int(input("Enter the key:"))
-caesar_encryption(plaintext,key)
+
+def newtonRaphson( x ):
+    h = func(x) / derivFunc(x)
+    while abs(h) >= 0.0001:
+        h = func(x)/derivFunc(x)
+         
+        
+        x = x - h
+     
+    print("The value of the root is : ",
+                             "%.4f"% x)
+ 
+x0 = -20 
+newtonRaphson(x0)
