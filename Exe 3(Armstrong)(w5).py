@@ -1,19 +1,19 @@
-def func( x ):
-    return x * x * x - x * x + 2
- 
-def derivFunc( x ):
-    return 3 * x * x - 2 * x
- 
+lower = 1
+upper = 10000
 
-def newtonRaphson( x ):
-    h = func(x) / derivFunc(x)
-    while abs(h) >= 0.0001:
-        h = func(x)/derivFunc(x)
-         
-        
-        x = x - h
-     
-    print("The value of the root is : ","%.4f"% x)
- 
-x0 = -20 
-newtonRaphson(x0)
+for num in range(lower, upper + 1):
+
+  
+   order = len(str(num))
+    
+   
+   sum = 0
+
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+
+   if num == sum:
+       print(num)
