@@ -1,13 +1,17 @@
-l=[]
-number=0
-count = 0
-sum = 0.0
-while number >= 0 :    
-    number=int(input('Enter your Number: '))
-    l.append(number)
-    sum = sum + number
-    count += 1
-if count < 0:
-  print("Input some numbers")
-else:
-  print("Average , Sum , maximum and minimum of the above numbers are: ", sum /count ,",", sum ,",", max(l) , "," , min(l))
+def caesar_encryption(plaintext,key):
+  encryption_str = ''
+  for i in plaintext:
+    if i.isupper():
+      temp = 65 + ((ord(i) - 65 + key) % 26) 
+      encryption_str = encryption_str + chr(temp)                              
+    elif i.islower():
+      temp = 97 + ((ord(i) - 97 + key) % 26)
+      encryption_str = encryption_str + chr(temp)
+    else:
+      encryption_str = encryption_str + i  
+ 
+  print("The ciphertext is:",encryption_str)
+ 
+plaintext = input("Enter the plaintext:")
+key = int(input("Enter the key:"))
+caesar_encryption(plaintext,key)
