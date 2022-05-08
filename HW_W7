@@ -95,7 +95,7 @@
 🔴#13 -->
 
 x in lst
-x nit in lsr 
+x not in lst
 
 
 🔴#14 -->
@@ -208,18 +208,18 @@ print(reverse(mylist))
  
 🔴#21 -->
 
-def first_way():
+def way1():
    a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
    print(a)
    
-def second_way():
+def way2():
    a = []
    
    for i in range(1, 11):
        a += [i]
    print(a)
    
-def third_way():
+def way3():
    a = []
    i = 1
    while i < 11:
@@ -227,23 +227,23 @@ def third_way():
        i += 1
    print(a)
    
-def fourth_way():
+def way4():
     b = [-10, -9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     a = (b[3:13])
     print(a)
     
-def fifth_way(n, a):
-if 11 > n > 0:
-   a += [n]
-   fifth_way(n + 1, a)
-return a
+def way5(n, a):
+    if 11 > n > 0:
+       a += [n]
+       way5(n + 1, a)
+    return a
 
 
-first_way()
-second_way()
-third_way()
-fourth_way()
-print(fifth_way(1, []))
+way1()
+way2()
+way3()
+way4()
+print(way5(1, []))
 
 
 🔴#22-->
